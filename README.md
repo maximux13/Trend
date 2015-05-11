@@ -1,3 +1,3 @@
 # Trend
 
-Trend is a website example made with AngularJS
+Trend is a functional website example made with AngularJS
