@@ -1,0 +1,56 @@
+<div class="breadcrumb container_16">
+    <ul class="grid_15">
+        <a href="#/">
+            <li class="casa"></li>
+        </a>
+        <li>Trend</li>
+        <li class="separador">></li>
+        <li>Productos</li>
+        <li class="separador">></li> 
+        <li> {{ categoria.nombre }} </li>
+        <div class="clear"></div>
+    </ul>
+    <div class="grid_1 cart">
+        <a href="#/checkout">
+            <span class="imagen"></span>
+            <span class="items">{{ totalProducts }}</span>
+        </a>
+    </div>
+</div>
+<div class="catalogo container_16">
+    <div class="grid_4">
+        <div class="recuadro">
+            <h2>Otras Categorias</h2>
+        </div>
+        <ul>
+            <div class="linea" ng-repeat="item in ['Mujer','Hombre', 'Niños', 'Ofertas']">
+                <span>{{ item }}</span>
+            </div>
+        </ul>
+    </div>
+    <div class="grid_12">
+        <div class="recuadro">
+            <h2>Zapatos {{ categoria.nombre }}</h2>
+        </div>
+        <div class="articulos">
+            <div class="grid_4 item" ng-repeat="item in categoria.items" style="margin: 0 6.6px 20px">
+                <a href="#producto/{{ item.codigo }}">
+                    <div class="circulo">
+                        <img src="{{ item.imagen.arriba }}" height="108" width="176" alt="">
+                    </div>
+                </a>
+                <span class="precio">${{ item.precio | number:0 }}</span>
+                <span class="nombre">{{ item.nombre }}</span>
+                <span class="ribbon oferta" ng-show="{{ item.categoria.indexOf('oferta') != -1 }}"></span>
+                <span class="ribbon new" ng-show="{{ item.categoria.indexOf('nuevo') != -1 }}"></span>
+
+            </div>
+        </div>
+        <div class="linea"> </div>
+        <div class="paginacion">
+            <div class="atras">&#171;</div>
+            <div class="pagina">1</div>
+            <div class="adelante">&#187;</div>
+        </div>
+    </div>
+</div>

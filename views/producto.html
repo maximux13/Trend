@@ -1,0 +1,92 @@
+<div class="breadcrumb container_16">
+    <ul class="grid_15">
+        <a href="#/">
+            <li class="casa"></li>
+        </a>
+        <li>Trend</li>
+        <li class="separador">></li>
+        <li>Productos</li>
+        <li class="separador">></li>
+        <li> {{ producto.item.categoria.join(' | ') }} </li>
+        <li class="separador">></li>
+        <li>{{ producto.item.nombre }}</li>
+        <div class="clear"></div>
+    </ul>
+    <div class="grid_1 cart">
+        <a href="#/checkout">
+            <span class="imagen"></span>
+            <span class="items">{{ totalProducts }}</span>
+        </a>
+    </div>
+</div>
+<div id="producto" class="container_16">
+    <div class="grid_16">
+        <h1 class="linea">
+            <span>&#8226; {{ producto.item.nombre }}</span>
+        </h1>
+    </div>
+    <div class="grid_8">
+        <div class="imagenes">
+            <img src="{{ producto.item.imagen.principal }}" alt="" width="460px">
+        </div>
+        <div class="miniaturas">
+            <ul>
+                <li><img src="{{ producto.item.imagen.arriba }}" width="76" height="50"></li>
+                <li><img src="{{ producto.item.imagen.atras }}" width="76" height="50"></li>
+                <li><img src="{{ producto.item.imagen.frente }}" width="76" height="50"></li>
+                <li><img src="{{ producto.item.imagen.lado }}" width="76" height="50"></li>
+            </ul>
+        </div>
+    </div>
+    <div class="recuadro descripcion grid_8">
+        <div class="cabecera">
+            <img src="{{ producto.item.imagen.principal }}" width="76" height="50" alt="">
+            <h3>{{ producto.item.nombre }}</h3>
+            <b style="float:right" class="precio">${{ producto.item.precio | number:0 }}</b>
+        </div>
+        <div class="info">
+            {{ producto.item.info }}
+        </div>
+        <div class="carrito">
+            <form action="" id="producto">
+                <button class="boton" name="agregar" ng-click="agregar(producto.item)"> Añadir Al Carrito </button>
+            </form>
+        </div>
+    </div>
+    <div class="opiniones grid_16">
+        <h2 class="linea">
+            <span>&#8226; Opiniones</span>
+        </h2>
+        <div class="cuadro grid_5">
+            <div class="puntuacion">{{ ((producto.item.valoracion.votos[0] + producto.item.valoracion.votos[1] + producto.item.valoracion.votos[2]) / 3) / 2  | number:0 }}</div>
+            <div class="caracteristica">
+                <span class="barra">
+                    <span class="porcentaje" style=" width: {{ producto.item.valoracion.votos[0] }}% "></span>
+                </span>
+                <span>Diseño</span>
+            </div>
+            <div class="caracteristica">
+                <span class="barra">
+                    <span class="porcentaje" style=" width: {{ producto.item.valoracion.votos[1] }}% "></span>
+                </span>
+                <span>Comodidad</span>
+            </div>
+            <div class="caracteristica">
+                <span class="barra">
+                    <span class="porcentaje" style=" width: {{ producto.item.valoracion.votos[2] }}% "></span>
+                </span>
+                <span>Precio</span>
+            </div>
+        </div>
+        <div class="opinion grid_11">
+            <div class="opinion_">
+                <span class="fecha">{{ producto.item.valoracion.opinion.fecha | date:'medium' }}</span>
+                <div class="usuario">{{ producto.item.valoracion.opinion.nombre }}</div>
+                <div class="comentario">
+                    {{ producto.item.valoracion.opinion.comentario }}
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>
+ <div class="clear"></div> 

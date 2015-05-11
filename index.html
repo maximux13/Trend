@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trends Collection - Tienda OnLine</title>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/960.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/angular-cookies.min.js"></script>
+</head>
+<body ng-App="app">
+    <div class="content">
+        <header>
+            <div class="container_16">
+                <div id="logo" class="grid_5">
+                    <h1>Trend Collection</h1>
+                </div>
+                <div id="buscador" class="prefix_6 grid_5">
+                    <input type="text" placeholder="Busca tus Zapatos..">
+                    <button class="buscar"></button>
+                </div>
+                <nav class="grid_16">
+                    <ul>
+                        <a href="#/categoria/mujer"><li>Mujer</li></a>
+                        <a href="#/categoria/hombre"><li>Hombre</li></a>
+                        <a href="#/categoria/niño"><li>Niños</li></a>
+                        <a href="#/categoria/oferta"><li>Ofertas</li></a>
+                        <a href="#/categoria/nuevo"><li class="new">New!</li></a>
+                        <div class="clear"></div>
+                        <div class="lineaMenu"></div>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main ng-view ng-animate="'ng-'">
+           
+        </main>
+         <div class="clear"></div>
+    </div>
+    <footer>
+        <div id="top" class="container_16">
+            <ul>
+                <li class="grid_4">
+                    <h3>Preguntas?</h3>
+                    <ul>
+                        <li>Servicio Al Cliente</li>
+                        <li>Seguir Pedido</li>
+                        <li>Preguntas Frecuente</li>
+                    </ul>
+                </li>
+                <li class="grid_4">
+                    <h3>Que es "Trend"?</h3>
+                    <ul>
+                        <li>Porque nosotros?</li>
+                        <li>Envios</li>
+                        <li>Devoluciones</li>
+                    </ul>
+                </li>
+                <li class="prefix_4 grid_4">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li>info@trend.co</li>
+                        <li>(+57) 123 45678</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="copyright" >
+            <ul class="container_16">
+                <li class="grid_8">
+                    <span class="minilogo"></span>
+                    <span>
+                        Trend Collection, Colombia. Todos los derechos Reservados &#169; 2014
+                    </span>
+                </li>
+                <li class="prefix_3 grid_5">
+                    <span>
+                        Designed and Developed by <b>andres alarcon</b>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script src="scripts/tienda.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

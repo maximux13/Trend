@@ -1,0 +1,90 @@
+<div class="breadcrumb container_16">
+    <ul class="grid_15">
+        <a href="#/">
+            <li class="casa"></li>
+        </a>
+        <li>Trend</li>
+        <li class="separador">></li>
+        <li>Checkout</li>
+        <div class="clear"></div>
+    </ul>
+    <div class="grid_1 cart">
+        <a href="#/checkout">
+            <span class="imagen"></span>
+            <span class="items">{{ totalProducts }}</span>
+        </a>
+    </div>
+</div>
+<div class="container_16">
+    <h1 class="container_16 linea">
+        <span>&#8226; Carrito </span>
+    </h1>
+</div>
+<div id="checkout" class="container_16">
+    <div ng-hide="totalProducts > 0">
+        No se han seleccionado productos aun. <a href="#/">Volver al Catalogo</a>
+    </div>
+    <div ng-show="totalProducts > 0">
+        <div class="titulos">  
+            <div class="prefix_10 grid_3">Cantidad</div>
+            <div class="grid_3">Precio</div>
+            <div class="clear"></div>
+        </div>
+        <div class="producto" ng-repeat="articulo in itemsContent">
+            <div class="left">
+                <div class="grid_3 imagen">
+                    <img ng-src="{{ items[ articulo.codigo - 1001 ].imagen.principal }}" height="80" width="120" alt="">
+                </div>
+                <div class="grid_7">
+                    <span class="nombre">{{ items[ articulo.codigo - 1001 ].nombre  }}</span>
+                    <span class="precioUnitario">Precio : ${{ items[ articulo.codigo - 1001 ].precio | number:0  }}</span>
+                    <a href ng-click="eliminar(articulo.codigo)" class="eliminar">Eliminar</a>
+                </div>
+            </div>
+            <div class="right">
+                <div class="grid_3">
+                    <input type="text" name="cantidad" value="{{ articulo.cantidad }} " disabled>
+                </div>
+                <div class="grid_3">
+                    ${{ (articulo.precio * articulo.cantidad) | number:0 }}
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="pago">
+            <div class="envio">
+                <span class="left">
+                    <div class="grid_3">Envio: </div>
+                </span>
+                <span class="right">
+                    <div class="grid_3">$15.000</div>
+                </span>
+            </div>
+            <div class="codigo">
+                <span class="left">
+                    <div class="grid_3">
+                        Codigo de Promocion:
+                    </div>
+                </span>
+                <span class="right">
+                    <div class="grid_3">
+                        <input type="text" placeholder="A1B2C3" name="codigo">
+                    </div>
+                </span>
+            </div>
+            <div class="total">
+                <div class="left">
+                    <div class="grid_3">Total: </div>
+                </div>
+                <div class="right">
+                    <div class="grid_3">${{ totalPrice + 15000 | number:0 }}</div>
+                </div>
+            </div>
+            <div class="pagar">
+                <input type="button" class="boton" name="pagar" value="Pagar">
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+ <div class="clear"></div>

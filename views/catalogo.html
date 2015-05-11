@@ -1,0 +1,47 @@
+<div class="breadcrumb container_16">
+    <ul class="grid_15">
+        <a href="#/">
+            <li class="casa"></li>
+        </a>
+        <li>Trend</li>
+        <div class="clear"></div>
+    </ul>
+    <div class="grid_1 cart">
+        <a href="#/checkout">
+            <span class="imagen"></span>
+            <span class="items">{{ totalProducts }}</span>
+        </a>
+    </div>
+</div>
+<div id="slider" class="container_16">
+    <div class="imagen grid_16" >
+        <img src="images/slider.jpg" height="340" width="940" />
+    </div>
+    <div class="btnLeft">&#171;</div>
+    <div class="btnRight">&#187;</div>
+</div>
+<div class="catalogo container_16">
+    <h2 class="linea">
+        <span>&#8226; Catalogo</span>
+    </h2>
+    <div class="articulos">
+        <div class="grid_4 item" ng-repeat="item in catalogo.items">
+            <a href="#producto/{{ item.codigo }}">
+                <div class="circulo">
+                    <img src="{{ item.imagen.arriba }}" height="108" width="176" alt="">
+                </div>
+            </a>
+            <span class="precio">${{ item.precio | number:0 }}</span>
+            <span class="nombre">{{ item.nombre }}</span>
+            <span class="ribbon oferta" ng-show="{{ item.categoria.indexOf('oferta') != -1 }}"></span>
+            <span class="ribbon new" ng-show="{{ item.categoria.indexOf('nuevo') != -1 }}"></span>
+        </div>
+    </div>
+    <div class="linea"> </div>
+    <div class="paginacion">
+        <div class="atras">&#171;</div>
+        <div class="pagina">1</div>
+        <div class="adelante">&#187;</div>
+    </div>
+</div>
+ <div class="clear"></div>
